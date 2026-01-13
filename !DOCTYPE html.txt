@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Google Map Search</title>
+</head>
+<body>
+
+<h2>Search Address</h2>
+
+<label for="street">Street:</label><br>
+<input type="text" id="street"><br><br>
+
+<label for="city">City:</label><br>
+<input type="text" id="city"><br><br>
+
+<button onclick="searchMap()">Search</button>
+
+<br><br>
+
+<iframe
+id="mapFrame"
+width="600"
+height="450"
+src="https://www.google.com/maps?output=embed">
+</iframe>
+
+<script>
+function searchMap() {
+var street = document.getElementById("street").value;
+var city = document.getElementById("city").value;
+var address = street + " " + city;
+
+document.getElementById("mapFrame").src =
+"https://www.google.com/maps?q=" +
+encodeURIComponent(address) +
+"&output=embed";
+}
+</script>
+
+</body>
+</html>
